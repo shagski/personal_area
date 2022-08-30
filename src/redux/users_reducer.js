@@ -3,7 +3,6 @@ import axios from "axios";
 const initialState = {
   users: [],
   inputValue: "",
-  stri: "",
 };
 
 const usersReducer = (state = initialState, action) => {
@@ -22,11 +21,6 @@ const usersReducer = (state = initialState, action) => {
       return {
         ...state.inputValue,
         inputValue: action.payload,
-      };
-    case "UPDATE_INPUT_VALUE":
-      return {
-        ...state.stri,
-        stri: action.payload,
       };
     default:
       return state;

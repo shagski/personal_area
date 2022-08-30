@@ -5,7 +5,6 @@ import { User } from "./User";
 
 export const Main = () => {
   const [flag, setFlag] = React.useState(false);
-  const [valueInp, setValueInp] = React.useState("");
   const { users } = useSelector(({ users }) => users);
   const { name } = useSelector(({ login }) => login);
   const dispatch = useDispatch();
@@ -18,17 +17,12 @@ export const Main = () => {
     setFlag(true);
   };
 
-  const InputValue = (event) => {
-    setValueInp(event.target.value);
-    dispatch(updateInputValue(valueInp));
-  };
-
   return (
     <div className="App">
       {name}
       {flag && (
         <div>
-          <input onChange={InputValue} />
+          <input />
           <button>add</button>
         </div>
       )}
